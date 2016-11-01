@@ -1,0 +1,8 @@
+services:
+    example.controller.users_list:
+        class: ExampleBundle\Controller\User\ListController
+        arguments:
+            - "@deejff_data_grid.service.data_grid_builder"
+            - "@example.repository.user"
+        calls:
+            - [setContainer, ["@service_container"]]

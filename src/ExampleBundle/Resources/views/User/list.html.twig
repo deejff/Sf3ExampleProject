@@ -1,0 +1,20 @@
+{% embed "DeejffDataGridBundle::data-grid.html.twig" %}
+    {% block data_grid_header %}
+        <tr>
+            <th>{{ knp_pagination_sortable(dataGrid.pagination, 'Id'|trans, 'u.id') }}</th>
+            <th>{{ knp_pagination_sortable(dataGrid.pagination, 'First name'|trans, 'u.firstName') }}</th>
+            <th>{{ knp_pagination_sortable(dataGrid.pagination, 'Last name'|trans, 'u.lastName') }}</th>
+            <th>{{ knp_pagination_sortable(dataGrid.pagination, 'Email'|trans, 'u.email') }}</th>
+        </tr>
+    {% endblock %}
+    {% block data_grid_content %}
+        {% for entity in dataGrid.data %}
+            <tr>
+                <td>{{ entity.id }}</td>
+                <td>{{ entity.firstName }}</td>
+                <td>{{ entity.lastName }}</td>
+                <td>{{ entity.email }}</td>
+            </tr>
+        {% endfor %}
+    {% endblock %}
+{% endembed %}

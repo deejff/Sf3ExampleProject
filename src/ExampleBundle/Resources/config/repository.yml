@@ -1,0 +1,10 @@
+parameters:
+    example.entity.user.class:
+
+services:
+    example.repository.user:
+       class: ExampleBundle\Repository\User
+       factory:
+               - "@doctrine.orm.entity_manager"
+               - getRepository
+       arguments: ['ExampleBundle\Entity\User']
