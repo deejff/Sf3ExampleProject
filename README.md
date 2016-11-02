@@ -1,4 +1,4 @@
-##Purpose of this project is to show how to use Deejff/DataGridBundle
+##Project shows how to use Deejff/DataGridBundle
 
 ######How to setup project:
 
