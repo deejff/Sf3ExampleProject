@@ -3,6 +3,7 @@
 namespace ExampleBundle\Controller\User;
 
 use ExampleBundle\DataGrid;
+use ExampleBundle\Repository;
 
 use Deejff\DataGridBundle\DataGrid\DataGridBuilder;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -15,7 +16,10 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class ListController extends Controller
 {
-    public function __construct(DataGridBuilder $dataGridBuilder, $userRepository)
+    private $dataGridBuilder;
+    private $userRepository;
+
+    public function __construct(DataGridBuilder $dataGridBuilder, Repository\User $userRepository)
     {
         $this->dataGridBuilder = $dataGridBuilder;
         $this->userRepository = $userRepository;
